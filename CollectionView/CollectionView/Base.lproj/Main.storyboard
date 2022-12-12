@@ -54,11 +54,28 @@
                     <navigationItem key="navigationItem" title="Collection View Demo" id="Mmd-mM-OTO"/>
                     <connections>
                         <outlet property="collectionView" destination="0lf-6W-sJh" id="KIF-2a-gFE"/>
+                        <segue destination="foT-Yc-8M1" kind="show" identifier="goTo" id="ngM-Zd-xgy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1057.2519083969464" y="-27.464788732394368"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="KrV-oQ-0JL">
+            <objects>
+                <viewController id="foT-Yc-8M1" customClass="SecondViewController" customModule="CollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EgH-u7-4KF">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="u4h-hf-WhV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7aX-RD-9T4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QL5-46-kX4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1905" y="-27"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BUD-ot-6tj">

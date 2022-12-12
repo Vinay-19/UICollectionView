@@ -15,6 +15,8 @@
 		A18AEB6D2942ABC600186BB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A18AEB6B2942ABC600186BB0 /* LaunchScreen.storyboard */; };
 		A18AEB762942AC8300186BB0 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18AEB742942AC8300186BB0 /* CustomCollectionViewCell.swift */; };
 		A18AEB772942AC8300186BB0 /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18AEB752942AC8300186BB0 /* CustomCollectionViewCell.xib */; };
+		A190C25A29478D7000011EEA /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A190C25929478D7000011EEA /* Extension+UIColor.swift */; };
+		A190C25C2947922600011EEA /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A190C25B2947922600011EEA /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		A18AEB6E2942ABC600186BB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A18AEB742942AC8300186BB0 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		A18AEB752942AC8300186BB0 /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
+		A190C25929478D7000011EEA /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
+		A190C25B2947922600011EEA /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				A18AEB6E2942ABC600186BB0 /* Info.plist */,
 				A18AEB742942AC8300186BB0 /* CustomCollectionViewCell.swift */,
 				A18AEB752942AC8300186BB0 /* CustomCollectionViewCell.xib */,
+				A190C25929478D7000011EEA /* Extension+UIColor.swift */,
+				A190C25B2947922600011EEA /* SecondViewController.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -145,7 +151,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A190C25C2947922600011EEA /* SecondViewController.swift in Sources */,
 				A18AEB652942ABC500186BB0 /* ViewController.swift in Sources */,
+				A190C25A29478D7000011EEA /* Extension+UIColor.swift in Sources */,
 				A18AEB612942ABC500186BB0 /* AppDelegate.swift in Sources */,
 				A18AEB632942ABC500186BB0 /* SceneDelegate.swift in Sources */,
 				A18AEB762942AC8300186BB0 /* CustomCollectionViewCell.swift in Sources */,
