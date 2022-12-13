@@ -6,20 +6,27 @@
 //
 
 import UIKit
-
+import SDWebImage
 class CustomCollectionViewCell: UICollectionViewCell {
 
+   
+    
+    
     @IBOutlet weak var collectionImgView: UIImageView!
+    
+    @IBOutlet weak var empName: UILabel!
     
     static let identifier = "CollectionViewCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        collectionImgView.layer.cornerRadius = 40
     }
     
-    public func configure(with image: UIImage){
-        collectionImgView.image = image
+    public func configure(with url: String, empFullName: String){
+        collectionImgView.sd_setImage(with: URL(string: url))
+        empName.text = empFullName
     }
 
     static func nib() ->UINib {

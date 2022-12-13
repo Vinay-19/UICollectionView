@@ -6,12 +6,23 @@
 //
 
 import UIKit
+import SDWebImage
+
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
     var randColor:[UIColor] = []
+    
+    var networkManager = NetworkManager()
+    
+    var empUserResponse = [EmployeeDetails]()
+
+    var empFullName = ""
+    var empEmailAdd = ""
+    var empPhotoUrl = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +32,10 @@ class ViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 120, height: 120)
         collectionView.collectionViewLayout = layout
+        networkManager.delegate = self
+        networkManager.performRequest()
+        
+        
     }
 
     private func getRandomColor()  {
@@ -36,21 +51,45 @@ class ViewController: UIViewController {
     }
 }
 
+// MARK: - NetworkManagerDelegate
 
+extension ViewController: NetworkManagerDelegate{
+
+    func didUpdateEmployeeDetails(empData: Employees) {
+        self.empUserResponse = empData.employees
+        print(self.empUserResponse)
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
+
+    func didFailedWithError(error: Error) {
+        print(error)
+    }
+
+
+}
+
+
+// MARK: - UICollectionViewDataSource
 
 extension ViewController: UICollectionViewDataSource {
+        
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.randColor.count
+        return self.empUserResponse.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
-//        cell.configure(with: UIImage(named: "photo")!)
-        cell.collectionImgView.backgroundColor = self.randColor[indexPath.row]
+        let url = self.empUserResponse[indexPath.row].photo_url_small
+        let empName = self.empUserResponse[indexPath.row].full_name
+        cell.configure(with: url, empFullName: empName)
         return cell
     }
     
 }
+
+// MARK: - UICollectionViewDelegate
 
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -59,6 +98,8 @@ extension ViewController: UICollectionViewDelegate {
 //        print("You tapped me!!!!!")
     }
 }
+
+// MARK: - UICollectionViewDelegateFlowLayout
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
     
